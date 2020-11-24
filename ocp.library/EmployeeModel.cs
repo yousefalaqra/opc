@@ -8,6 +8,6 @@ namespace ocp.library
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string EmailName { get; set; }
+        public string EmailAdress { get; set; }
     }
 }

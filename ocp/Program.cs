@@ -17,22 +17,16 @@ namespace ocp
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
 
-            foreach (var applicant in applicants)
-            {
-                // create employee account\
-                EmployeeModel employee = new EmployeeModel
-                {
-                    FirstName = applicant.FirstName,
-                    LastName = applicant.LastName,
-                    EmailName = applicant.FirstName.Substring(0, 1) + applicant.LastName + "@jointech.com"
-                };
+            Accounts accountProrccesser = new Accounts();
 
-                employees.Add(employee);
+            foreach (var applicant in applicants)
+            {                            
+                employees.Add(accountProrccesser.CreateAccount(applicant));
             }
 
             foreach (var employee in employees)
             {
-                Console.WriteLine($"employee name: {employee.FirstName} {employee.LastName}, email adress: {employee.EmailName}");
+                Console.WriteLine($"employee name: {employee.FirstName} {employee.LastName}, email adress: {employee.EmailAdress}");
             }
         }
     }
